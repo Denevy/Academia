@@ -40,13 +40,15 @@ session_start();
     <?php require('php/jscripts.php'); ?>
     <!-- Bootstrap core JavaScript
     ================================================== -->
-      <script type="text/javascript" src="js/usuario.js"> </script>
+      <!--<script type="text/javascript" src="js/usuario.js"> </script>-->
       <script type="text/javascript" src="js/programacion.js"> </script>
       <script type="text/javascript" src="js/pensum.js"> </script>
       <script type="text/javascript" src="js/curso.js"></script>
       <script type="text/javascript" src="js/carrerauniversitaria.js"></script>
       <script type="text/javascript" src="js/centrouniversitario.js"></script>
+      <script type="text/javascript" src="js/createUsuario.js"></script>
       <script type="text/javascript" src="js/docente.js"></script>
+     <!-- <script type="text/javascript" src="js/alumno.js"></script>-->
       <script type="text/javascript" src="js/ciclo.js"></script>
       <script type="text/javascript" src="js/Dpensum.js"> </script>  
       <!-- AJAX -->
@@ -111,10 +113,11 @@ session_start();
                   <li role="presentation"><a href="#curso" aria-controls="curso" role="tab" data-toggle="tab"> Curso </a></li>
                   <li role="presentation"><a href="#centroU" aria-controls="centroU" role="tab" data-toggle="tab">CentroU</a></li>
                   <li role="presentation"><a href="#ciclo" aria-controls="ciclo" role="tab" data-toggle="tab"> Ciclo </a></li>
-                  <li role="presentation"><a href="#docente" aria-controls="docente" role="tab" data-toggle="tab">Docente</a></li>
-
+                  <li role="presentation"><a href="#docente" aria-controls="docente" role="tab" data-toggle="tab">Docente</a></li-->
+                  <!--li role="presentation"><a href="#alumno" aria-controls="alumno" role="tab" data-toggle="tab">Alumno</a></li-->
                   
-                <?php if($_SESSION['idNivelAcceso']==1){ ?>  <li role="presentation"><a href="#usuario" aria-controls="usuario" role="tab" data-toggle="tab">Usuario</a></li> <?php } ?>
+                <?php if($_SESSION['idNivelAcceso']==1){ ?>
+                 <li role="presentation"><a href="#user" aria-controls="user" role="tab" data-toggle="tab">Usuario</a></li>   <?php } ?>
                 </ul>
               <!-- Tab content -->
                 <div class="tab-content">
@@ -352,7 +355,8 @@ session_start();
                   <div role="tabpanel" class="tab-pane fade" id="centroU"><?php require("tabs/tabsCentrou.php"); ?></div>
                   <div role="tabpanel" class="tab-pane fade" id="ciclo"><?php require("tabs/tabsCiclo.php"); ?> </div>
                   <div role="tabpanel" class="tab-pane fade" id="docente"><?php require("tabs/tabsDocente.php"); ?></div>
-                  <div role="tabpanel" class="tab-pane fade" id="usuario"><?php require("tabs/tabusuario.php");?> </div>
+                  <!--div role="tabpanel" class="tab-pane fade" id="alumno"><?php require("tabs/tabsAlumno.php"); ?></div-->
+                  <div role="tabpanel" class="tab-pane fade" id="user"><?php require("tabs/tabsUser.php");?> </div>
 
 
                   
