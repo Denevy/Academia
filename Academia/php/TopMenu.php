@@ -14,11 +14,11 @@
 
  
 
-        <li><a href="#about" > <b> <?php echo $_SESSION['NombreCompleto']?></b></a></li>
+        <li><a href="#about" > <b> <?php echo $_SESSION['nombres']." ".$_SESSION['apellidos']?></b></a></li>
 
         <li><a href="#about" >[<b> <?php echo$_SESSION['privilegio']?></b>]</a></li>
 
-        <?php   if($_SESSION['idNivelAcceso']!=1){  ?>
+        <?php   if($_SESSION['idrol']!=1){  ?>
         <li role="presentation" class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
               <b> <?php echo $_SESSION['codigoCentroU'];if($_SESSION['idNivelAcceso']==2){ echo $_SESSION['codigoCarrera'];}?></b> <span class="caret"></span>
@@ -34,7 +34,7 @@
             }  ?>
             
        
-        <li><a href="index.php"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>Cerrar Sesion</a></li>
+        <li><a href="index.php"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Cerrar Sesion</a></li>
       </ul>
     </div>
   </div> 

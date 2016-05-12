@@ -1,4 +1,4 @@
-<script  type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script  type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
 <script  type="text/javascript" src="js/bootstrap.min.js"></script>
 <script  type="text/javascript" src="js/bootbox.min.js"></script>
 <script type="text/javascript" src="js/moment.js"></script>

@@ -1,16 +1,19 @@
 <?php 
 	require('conexion2.php');
-	$user   = utf8_decode($_POST['user']); // convierte a codigo del teclado espanol
-	$nombre = utf8_decode($_POST['nombre']);
-	$contrasenia   = utf8_decode($_POST['contrasenia']); 
-	$nacceso    = $_POST['nacceso'];
+	$user   = utf8_decode($_POST['username']); // convierte a codigo del teclado espanol
+	$nombres = utf8_decode($_POST['nombres']);
+	$apellidos = utf8_decode($_POST['apellidos']);
+	$edad  = $_POST['edad']; 
+	$contrasenia   = utf8_decode($_POST['pass']); 
 	$estado    = $_POST['estado']; 
+	$nivel= $_POST['nivel'];
 	$info = null;
 	$info = array(); // creamos el array
 	unset($info['r1']); // limpiar el array
 	unset($info['r2']);
-	$query="INSERT INTO `usuario`(`NombreCompleto`, `contrasenia`, `fk_idNivelAcceso`, `Usuario`, `fk_idEstados`)
-						VALUES ('$nombre','$contrasenia','$nacceso','$user','$estado')";
+	//echo $apellidos.$edad;
+	$query="INSERT INTO `usuario`(`alias`,`nombres`,`apellidos`,`edad`,`password`,`estado_idestado`,`rol_idrol`)
+						VALUES ('$user','$nombres','$apellidos','$edad','$contrasenia','$estado','$nivel')";
 	mysqli_set_charset($conn, "utf8"); //formato de datos utf8									
 	$i = mysqli_query($conn,$query);
 	//or die("Error  en la conexion de la base de datos");

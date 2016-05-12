@@ -3,23 +3,13 @@
   session_start();
   $_SESSION['valido'] = 0;
   $_SESSION['tab']= "programacion";
-
-  $_SESSION['NombreCompleto'] ="";
+  $_SESSION['nombres'] ="";
   $_SESSION['idusuario'] =0;
-  $_SESSION['nombreCarrera']= "";
-  $_SESSION['nombreCentroU']= "";
-  $_SESSION['privilegio']= "";
-   
-  $_SESSION['idNivelAcceso']=0;
-  $_SESSION['idcentroU']= 0;
-  $_SESSION['idcarrera']= 0;
-  $_SESSION['codigoCarrera']= 0;
-  $_SESSION['codigoCentroU']= 0;
-  $_SESSION['idEstados'] =0;
-
-            
-  if(!isset($_SESSION['nombre']))
-    $_SESSION['nombre'] = "";
+  $_SESSION['privilegio']= "";   
+  $_SESSION['idrol']=0;
+  $_SESSION['idestado'] =0;            
+  if(!isset($_SESSION['nombres']))
+    $_SESSION['nombres'] = "";
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,7 +33,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="#">INICIO</a></li>
-        <li><a href="#about">INFORMACION</a></li>
+        <li><a href="informacion" class="dropdown-menu">INFORMACION</a></li>
         <li>
           <div class="navbar-collapse">
            <?php require('php/conexion.php'); ?> 
@@ -74,7 +64,7 @@
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
-        
+        <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>  
       <div class="carousel-inner" role="listbox">
         <div class="item active">
@@ -82,8 +72,8 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>Aprendizaje</h1>
-              <p>Ayudándole a facilitar los procesos de elaboracion de Calendarios de Clases como un apoyo a: <code>http://www.umg.edu.gt</code> </p>
-              <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              <!-- <p>Ayudándole a facilitar los procesos de elaboracion de Calendarios de Clases como un apoyo a: <code>http://www.umg.edu.gt</code> </p> -->
+              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
             </div>
           </div>
         </div>
@@ -91,8 +81,19 @@
           <img class="second-slide" src="img/laptop_ipad_iphone.png" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Desde cualquier dispositivo</h1>
-              <p>Utilice su dispositivo desde cualquier lugar y en cualquier momento</p>
+              <h1>En cualquier momento</h1>
+              <p>En cualquier Lugar</p>
+              <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Ver Más</a></p>   -->
+            </div>
+          </div>
+        </div>
+      
+              <div class="item">
+          <img class="third-slide" src="img/valor_agregado.png" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Valor Agregado</h1>
+              <p>El conocimiento visto como un valor agregado</p>
               <!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Ver Más</a></p>   -->
             </div>
           </div>
@@ -110,21 +111,21 @@
   
   <div class="container">
     <!-- parrafo -->
-    <img src="img/FLAT-Diseño-Web-Responsive.jpg" style="max-width:500px; margin-top: -20px;" alt="..." class="img-circle">
+    <img src="img/FLAT-Diseño-Web-Responsive.png" style="max-width:500px; margin-top: -20px;" alt="..." class="img-circle">
     
   </div>
     <div class="container">
           <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <img src="img/calendario_icono.PNG" style="max-width:250px; margin-top: -20px;" alt="..." class="img-circle">
-          <h2>Versátil</h2>
+          <img src="img/calendario_icono.jpg" style="max-width:250px; margin-top: -20px;" alt="..." class="img-circle">
+          <h2>Desde cualquier dispositivos</h2>
           <p>Pensado para facilitar la distribución de los recursos en los horarios disponibles, con todas las restricciones que sean necesarias al alcance de un clic.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
-          <h2>Efectivo</h2>
-          <p>Calendarice cada uno de los recursos con que cuenta para trabajar durante el periodo de clases, brindando la eficiencia y eficacia que busca, otorgue permisos a usuarios para ver editar y exportar el resultado.</p>
+          <h2>Aprenda de forma Facil</h2>
+          <p>En los momentos de ocio, tome un tiempo para aprender y refrescar de temas de su interes.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
        </div>
         <div class="col-md-4">
@@ -138,7 +139,7 @@
     <footer>
       <div class="container">
           <p class="pull-right"><a href="#">Back to top</a></p>
-          <p>&copy; Ingeniería de Proyectos 2016</p>
+          <p>&copy; Ingeniería de Software 2016</p>
         </div>
     </footer>
     <!-- /container -->

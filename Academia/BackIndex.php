@@ -20,37 +20,26 @@
       $nombre=$_POST['nombre'];
       if(isset($_POST['contrasenia'])){
         $contrasenia=$_POST['contrasenia'];
-        $query= "SELECT U.idusuario, U.NombreCompleto, E.NombreEstado ,E.idEstados, NA.privilegio, NA.idNivelAcceso, CU.nombreCentroU, CU.idcentroU ,CU.codigoCentroU, C.nombreCarrera,C.codigoCarrera, C.idcarrera
+        $query= "SELECT U.idusuario, U.password, U.alias, U.nombres, U.apellidos, E.tipo ,E.idestado, R.privilegio, R.idrol
                 FROM usuario U 
-                inner JOIN estados E ON U.fk_idEstados = E.idEstados
-                inner JOIN nivelacceso NA ON U.fk_idNivelAcceso = NA.idNivelAcceso
-                inner JOIN carrera C ON U.fk_idcarrera = C.idcarrera
-                inner JOIN centrou CU ON U.fk_idcentroU = CU.idcentroU
-                WHERE U.Usuario = '$nombre' AND U.contrasenia='$contrasenia'";
+                inner JOIN estado E ON U.estado_idestado = E.idestado
+                inner JOIN rol R ON U.rol_idrol = R.idrol
+                WHERE U.alias = '$nombre' AND U.password ='$contrasenia'";
         require('php/conexion2.php');
         mysqli_set_charset($conn, "utf8"); //formato de datos utf8
         $i = mysqli_query($conn,$query);
         $n=mysqli_num_rows($i);
         $close = mysqli_close($conn)or die("Ha sucedido un error inesperado en la desconexion de la base de datos");  
         $row=mysqli_fetch_array($i);
-        
         if($n==1) {
-          $_SESSION['idEstados'] =$row['idEstados'];
-          if($_SESSION['idEstados'] ==1){
-            
-            
+          $_SESSION['idestado'] =$row['idestado'];
+          if($_SESSION['idestado'] ==1){           
             $_SESSION['valido'] =1;
-            $_SESSION['NombreCompleto'] =$row['NombreCompleto'];
+            $_SESSION['nombres'] =$row['nombres'];
+            $_SESSION['apellidos'] =$row['apellidos'];
             $_SESSION['idusuario'] =$row['idusuario'];
-            $_SESSION['nombreCarrera']= $row['nombreCarrera'];
-            $_SESSION['nombreCentroU']= $row['nombreCentroU'];
             $_SESSION['privilegio']= $row['privilegio'];
-            $_SESSION['idNivelAcceso']= $row['idNivelAcceso'];
-            $_SESSION['idcentroU']= $row['idcentroU'];
-            $_SESSION['idcarrera']= $row['idcarrera'];
-            $_SESSION['codigoCarrera']= $row['codigoCarrera'];
-            $_SESSION['codigoCentroU']= $row['codigoCentroU'];
-
+            $_SESSION['idrol']= $row['idrol'];
             header("Location: dashboard.php");
           }
         }
@@ -63,7 +52,7 @@
             <div class="alert alert-danger">
               <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
               <span class="sr-only">Error:</span> 
-         <?php       if($_SESSION['idEstados']==2){ ?>
+         <?php       if($_SESSION['idestado']==2){ ?>
                 [   El Usuario esta Desabilitado  ] 
         <?php       } 
               else{ ?>
