@@ -142,7 +142,6 @@ $(document).ready(function(){ // funcion que inicia uan vez el documento este ca
       var Nivel = $("#User_Nivel").val();
       var bandera = 1;
       var dataString = 'username='+username+'&nombres='+ nombres+'&apellidos='+apellidos+'&edad='+edad+'&pass='+pass+' &estado='+ Estado + '&nivel='+ Nivel;
-     //alert(dataString);
       if(pass != passcheck){
         bootbox.alert('Verifique Contraseña');
         document.getElementById("btnaddUser").disabled=false;

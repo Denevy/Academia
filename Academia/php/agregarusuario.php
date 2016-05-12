@@ -1,12 +1,13 @@
 <?php 
 	require('conexion2.php');
-	$user   = utf8_decode($_POST['username']); // convierte a codigo del teclado espanol
-	$nombres = utf8_decode($_POST['nombres']);
-	$apellidos = utf8_decode($_POST['apellidos']);
-	$edad  = $_POST['edad']; 
-	$contrasenia   = utf8_decode($_POST['pass']); 
+	$user   =  htmlspecialchars(utf8_decode($_POST['username'])); // convierte a codigo del teclado espanol
+	$nombres =  htmlspecialchars(utf8_decode($_POST['nombres']));
+	$apellidos =  htmlspecialchars(utf8_decode($_POST['apellidos']));
+	$edad  =  htmlspecialchars(utf8_decode($_POST['edad'])); 
+	$contra= utf8_decode($_POST['pass']);
+	$contrasenia   = ($contra); 
 	$estado    = $_POST['estado']; 
-	$nivel= $_POST['nivel'];
+	$nivel=  $_POST['nivel'];
 	$info = null;
 	$info = array(); // creamos el array
 	unset($info['r1']); // limpiar el array

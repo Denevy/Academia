@@ -19,7 +19,7 @@
     if(isset($_POST['nombre'])){
       $nombre=$_POST['nombre'];
       if(isset($_POST['contrasenia'])){
-        $contrasenia=$_POST['contrasenia'];
+        $contrasenia=($_POST['contrasenia']);
         $query= "SELECT U.idusuario, U.password, U.alias, U.nombres, U.apellidos, E.tipo ,E.idestado, R.privilegio, R.idrol
                 FROM usuario U 
                 inner JOIN estado E ON U.estado_idestado = E.idestado
@@ -56,8 +56,8 @@
                 [   El Usuario esta Desabilitado  ] 
         <?php       } 
               else{ ?>
-                [   El Usuario o Contrasena son incorrectos  ]    
-        <?php        } ?>
+                [   El Usuario o Contrasena son incorrectos  ]   
+        <?php  echo $contrasenia; echo $pass;     } ?>
               <a href="index.php"><button type="button" class="btn btn-danger">Volver</button></a>
             </div>
         </div>  
