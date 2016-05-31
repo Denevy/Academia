@@ -295,7 +295,7 @@ session_start();
                    <!--          FIN progamacion               --> 
 
                   <!-- INICIO PENSUM-->
-                  <div role="tabpanel" class="tab-pane fade" id="user"><?php require_once("Model/UserTabla.php");?> </div>            
+                  <div role="tabpanel" class="tab-pane fade" id="user"><?php require_once("../Model/UserTabla.php");?> </div>            
             </div>
           </section> 
         </div>

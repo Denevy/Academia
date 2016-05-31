@@ -12,7 +12,7 @@ function mostrartablaUser()
 { 
   $.ajax({
     type: "post",
-    url: "Controller/UserTable.php",
+    url: "../Controller/UserTable.php",
     dataType:"json",
     success: function(result){
         $("#bodytUser").children().remove(); // limpia la tabla
@@ -43,7 +43,7 @@ function selectEstado()
     $(newRow).appendTo("#User_Estado");
   $.ajax({
     type: "post",
-    url: "Form/Select/EstadoInfo.php", //pagina a donde se envian los datos
+    url: "../Form/Select/EstadoInfo.php", //pagina a donde se envian los datos
     dataType:"json",
     success: function(result){
         $("#User_Estado").children().remove();
@@ -64,7 +64,7 @@ function selectNivel()
     $(newRow).appendTo("#User_Nivel");
   $.ajax({
     type: "post",
-    url: "Form/Select/NivelInfo.php", //pagina a donde se envian los datos
+    url: "../Form/Select/NivelInfo.php", //pagina a donde se envian los datos
     dataType:"json",
     success: function(result){        
         $("#User_Nivel").children().remove();
@@ -129,7 +129,7 @@ $(document).ready(function(){ // funcion que inicia uan vez el documento este ca
       //alert(dataString);
         $.ajax({
           type: "post",
-          url: "Controller/UserInsert.php",
+          url: "../Controller/UserInsert.php",
           data: dataString,
           dataType:"json",
           success: function(result){
