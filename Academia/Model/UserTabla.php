@@ -93,7 +93,7 @@
               <th>Contraseña</th>
               <th>Nombres</th>    
               <th>Estado</th>
-              <th>Nivekkkkl</th>
+              <th>Nivel</th>
             </thead>
             <tbody id="bodytUser">              
             </tbody >

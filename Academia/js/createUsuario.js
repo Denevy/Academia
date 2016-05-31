@@ -12,13 +12,9 @@ function mostrartablaUser()
 { 
   $.ajax({
     type: "post",
-    url: "php/tablaUsuario.php",
+    url: "Controller/UserTable.php",
     dataType:"json",
     success: function(result){
-      if(result.errorSelect==true){
-        bootbox.alert({title: result.r1, message: result.r2});
-      }
-      else{
         $("#bodytUser").children().remove(); // limpia la tabla
         $.each(result, function(i,usuariotd){ // iteraciones para desplegar cada fila de la tabla centros
         var parametro = JSON.stringify(usuariotd);
@@ -35,7 +31,6 @@ function mostrartablaUser()
         $(newRow).appendTo("#bodytUser");
        //alert(newRow);
         });
-      }
     }
   });
   //termina ajax
@@ -48,20 +43,9 @@ function selectEstado()
     $(newRow).appendTo("#User_Estado");
   $.ajax({
     type: "post",
-    url: "php/modalUserEstado.php", //pagina a donde se envian los datos
+    url: "Select/EstadoInfo.php", //pagina a donde se envian los datos
     dataType:"json",
     success: function(result){
-        
-      $("#User_Estado").children().remove();
-        var newRow =  "<option value=''>Elija un Estado</option>";
-          $(newRow).appendTo("#User_Estado");
-          // alert(idpensum);
-      if(result.errorSelect==true){
-        bootbox.alert({title: result.r1, message: result.r2});
-
-        
-      }
-      else{
         $("#User_Estado").children().remove();
         var newRow =  "<option value=''>Elija un Estado</option>";
           $(newRow).appendTo("#User_Estado");
@@ -70,9 +54,6 @@ function selectEstado()
            newRow =   "<option  value="+estado.id+">"+estado.estado+"</option>";
           $(newRow).appendTo("#User_Estado");
         });
-      }
-      
-      
     }
   });
 }
@@ -83,26 +64,17 @@ function selectNivel()
     $(newRow).appendTo("#User_Nivel");
   $.ajax({
     type: "post",
-    url: "php/modalUserNivel.php", //pagina a donde se envian los datos
+    url: "Select/NivelInfo.php", //pagina a donde se envian los datos
     dataType:"json",
     success: function(result){        
-      $("#User_Nivel").children().remove();
-        var newRow =  "<option value=''>Elija Nivel de Acceso</option>";
-          $(newRow).appendTo("#User_Nivel");
-          // alert(idpensum);
-      if(result.errorSelect==true){
-        bootbox.alert({title: result.r1, message: result.r2}); 
-      }
-      else{
         $("#User_Nivel").children().remove();
         var newRow =  "<option value=''>Elija Nivel de Acceso</option>";
           $(newRow).appendTo("#User_Nivel");
         
-        $.each(result, function(i,nivel){ // iteraciones para desplegar cada fila de la tabla usuarios
+        $.each(result, function(z,nivel){ // iteraciones para desplegar cada fila de la tabla usuarios
            newRow =   "<option  value="+nivel.id+">"+nivel.privilegio+"</option>";
           $(newRow).appendTo("#User_Nivel");
-        });User_Nivel
-      }     
+        });User_Nivel    
     }
   });
 }
