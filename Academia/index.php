@@ -16,7 +16,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>LOGIN</title>
-	<?php require('php/bootstrapCSS.php'); ?>
+	<?php require('Resources/php/bootstrapCSS.php'); ?>
   <link href="Resources/css/carousel.css" rel="stylesheet">
 </head>
 <body>
@@ -36,8 +36,8 @@
         <li><a href="informacion" class="dropdown-menu">INFORMACION</a></li>
         <li>
           <div class="navbar-collapse">
-           <?php require('php/conexion.php'); ?> 
-          <form class="navbar-form navbar-right" action="BackIndex.php" method="POST">
+           <?php require('Resources/php/conexion.php'); ?> 
+          <form class="navbar-form navbar-right" action="Controller/BackIndex.php" method="POST">
             <div class="form-group">
               <input type="user"  class="form-control" placeholder="User" name="nombre" required autofocus>
             </div>
@@ -147,7 +147,7 @@
   	  <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <?php require('php/jscripts.php'); ?>
+    <?php require('Resources/php/jscripts.php'); ?>
      <!--<script src="js/docs.min.js"></script>-->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
      <!--<script src="js/ie10-viewport-bug-workaround.js"></script>-->

@@ -19,13 +19,13 @@ session_start();
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <?php require('php/bootstrapCSS.php'); ?>
-    <link href="Resources/css/sticky-footer.css" rel="stylesheet">
-    <?php require('php/jscripts.php'); ?>
+    <?php require('../Resources/php/bootstrapCSS.php'); ?>
+    <link href="../Resources/css/sticky-footer.css" rel="stylesheet">
+    <?php require('../Resources/php/jscripts.php'); ?>
     <!-- Bootstrap core JavaScript
     ================================================== -->
-      <script type="text/javascript" src="Resources/js/createUsuario.js"> </script>
-      <script type="text/javascript" src="Resources/js/programacion.js"> </script>
+      <script type="text/javascript" src="../Resources/js/createUsuario.js"> </script>
+      <script type="text/javascript" src="../Resources/js/programacion.js"> </script>
       <!-- AJAX -->
       <script>
         window.onload = detectarCarga;
@@ -42,7 +42,7 @@ session_start();
 
 <?php
     if($_SESSION['valido']==1){ // si inicio sesion correctamente
-      require("php/TopMenu.php");
+      require("TopMenu.php");
         if(!isset($_SESSION['tab'])){
           $_SESSION['tab']= "programacion";  // elegir la pestana de horario
         }
@@ -83,7 +83,7 @@ session_start();
                   <!--INICIO progamacion --> 
                   <div role="tabpanel" class="tab-pane fade" id="programacion">
                     <div id="carga">
-                      <img src="Resources/img/ajax-loader.gif" />
+                      <img src="../Resources/img/ajax-loader.gif" />
                     </div>
                 <!-- Button trigger modal -->
                     <br>
@@ -315,7 +315,7 @@ session_start();
           <div class="alert alert-danger">
             <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
             <span class="sr-only">Error:</span>    
-            Usuario no autorizado    <a href="index.php"><button type="button" class="btn btn-danger">Volver</button></a></div>
+            Usuario no autorizado    <a href="../index.php"><button type="button" class="btn btn-danger">Volver</button></a></div>
       </div>  
     </div>
 <?php

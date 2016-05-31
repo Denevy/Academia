@@ -9,7 +9,7 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <?php require('php/bootstrapCSS.php'); ?>
+    <?php require('../Resources/php/bootstrapCSS.php'); ?>
     <meta name="description" content="">
     <meta name="author" content="">
     <title>consola</title>
@@ -25,7 +25,7 @@
                 inner JOIN estado E ON U.estado_idestado = E.idestado
                 inner JOIN rol R ON U.rol_idrol = R.idrol
                 WHERE U.alias = '$nombre' AND U.password ='$contrasenia'";
-        require('php/conexion2.php');
+        require('../Resources/php/conexion2.php');
         mysqli_set_charset($conn, "utf8"); //formato de datos utf8
         $i = mysqli_query($conn,$query);
         $n=mysqli_num_rows($i);
@@ -40,7 +40,7 @@
             $_SESSION['idusuario'] =$row['idusuario'];
             $_SESSION['privilegio']= $row['privilegio'];
             $_SESSION['idrol']= $row['idrol'];
-            header("Location: dashboard.php");
+            header("Location: ../View/dashboard.php");
           }
         }
       }  
@@ -58,7 +58,7 @@
               else{ ?>
                 [   El Usuario o Contrasena son incorrectos  ]   
         <?php  echo $contrasenia; echo $pass;     } ?>
-              <a href="index.php"><button type="button" class="btn btn-danger">Volver</button></a>
+              <a href="../index.php"><button type="button" class="btn btn-danger">Volver</button></a>
             </div>
         </div>  
       </div>
@@ -67,6 +67,6 @@
 ?>
     <!-- Bootstrap core JavaScript
     ================================================== -->
-    <?php require('php/jscripts.php'); ?>
+    <?php require('../Resources/php/jscripts.php'); ?>
   </body>
 </html>
