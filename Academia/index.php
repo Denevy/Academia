@@ -17,7 +17,7 @@
 	<meta charset="UTF-8">
 	<title>LOGIN</title>
 	<?php require('php/bootstrapCSS.php'); ?>
-  <link href="css/carousel.css" rel="stylesheet">
+  <link href="Resources/css/carousel.css" rel="stylesheet">
 </head>
 <body>
 	<!-- Fixed navbar -->
@@ -28,7 +28,7 @@
         <span class="sr-only">Toggle navigation</span>
         <span class="glyphicon glyphicon-th"></span>
       </button>
-      <a class="navbar-brand navbar-left" href="#"><img style="max-width:160px; margin-top: -10px; " src="img/CRONOS.png" alt="chronos"> </a>
+      <a class="navbar-brand navbar-left" href="#"><img style="max-width:160px; margin-top: -10px; " src="Resources/img/CRONOS.png" alt="chronos"> </a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
@@ -68,7 +68,7 @@
       </ol>  
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="img/CRONOS.jpg" alt="First slide">
+          <img class="first-slide" src="Resources/img/CRONOS.jpg" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Aprendizaje</h1>
@@ -78,7 +78,7 @@
           </div>
         </div>
         <div class="item">
-          <img class="second-slide" src="img/laptop_ipad_iphone.png" alt="Second slide">
+          <img class="second-slide" src="Resources/img/laptop_ipad_iphone.png" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>En cualquier momento</h1>
@@ -89,7 +89,7 @@
         </div>
       
               <div class="item">
-          <img class="third-slide" src="img/valor_agregado.png" alt="Third slide">
+          <img class="third-slide" src="Resources/img/valor_agregado.png" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
               <h1>Valor Agregado</h1>
@@ -111,14 +111,14 @@
   
   <div class="container">
     <!-- parrafo -->
-    <img src="img/FLAT-Diseño-Web-Responsive.png" style="max-width:500px; margin-top: -20px;" alt="..." class="img-circle">
+    <img src="Resources/img/FLAT-Diseño-Web-Responsive.png" style="max-width:500px; margin-top: -20px;" alt="..." class="img-circle">
     
   </div>
     <div class="container">
           <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-4">
-          <img src="img/calendario_icono.jpg" style="max-width:250px; margin-top: -20px;" alt="..." class="img-circle">
+          <img src="Resources/img/calendario_icono.jpg" style="max-width:250px; margin-top: -20px;" alt="..." class="img-circle">
           <h2>Desde cualquier dispositivos</h2>
           <p>Pensado para facilitar la distribución de los recursos en los horarios disponibles, con todas las restricciones que sean necesarias al alcance de un clic.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>

@@ -7,7 +7,7 @@
         <span class="sr-only">Toggle navigation</span>
         <span class="glyphicon glyphicon-th"></span>
       </button>
-      <a class="navbar-brand navbar-left" href="#"><img style="max-width:200px; margin-top: -20px; " src="img/CRONOS.png" alt="chronos"> </a>
+      <a class="navbar-brand navbar-left" href="#"><img style="max-width:200px; margin-top: -20px; " src="Resources/img/CRONOS.png" alt="chronos"> </a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">

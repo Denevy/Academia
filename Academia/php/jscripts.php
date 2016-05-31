@@ -1,9 +1,9 @@
-<script  type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-<script  type="text/javascript" src="js/bootstrap.min.js"></script>
-<script  type="text/javascript" src="js/bootbox.min.js"></script>
-<script type="text/javascript" src="js/moment.js"></script>
-<script type="text/javascript" src="js/bootstrap-timepicker.js"></script>
-<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+<script  type="text/javascript" src="Resources/js/jquery-1.11.2.min.js"></script>
+<script  type="text/javascript" src="Resources/js/bootstrap.min.js"></script>
+<script  type="text/javascript" src="Resources/js/bootbox.min.js"></script>
+<script type="text/javascript" src="Resources/js/moment.js"></script>
+<script type="text/javascript" src="Resources/js/bootstrap-timepicker.js"></script>
+<script type="text/javascript" src="Resources/js/bootstrap-datetimepicker.min.js"></script>
 // <script type="text/javascript">
 // function llamada(){
 // var conexion;

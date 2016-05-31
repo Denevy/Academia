@@ -20,12 +20,12 @@ session_start();
   <head>
     <meta charset="utf-8">
     <?php require('php/bootstrapCSS.php'); ?>
-    <link href="css/sticky-footer.css" rel="stylesheet">
+    <link href="Resources/css/sticky-footer.css" rel="stylesheet">
     <?php require('php/jscripts.php'); ?>
     <!-- Bootstrap core JavaScript
     ================================================== -->
-      <script type="text/javascript" src="js/createUsuario.js"> </script>
-      <script type="text/javascript" src="js/programacion.js"> </script>
+      <script type="text/javascript" src="Resources/js/createUsuario.js"> </script>
+      <script type="text/javascript" src="Resources/js/programacion.js"> </script>
       <!-- AJAX -->
       <script>
         window.onload = detectarCarga;
@@ -83,7 +83,7 @@ session_start();
                   <!--INICIO progamacion --> 
                   <div role="tabpanel" class="tab-pane fade" id="programacion">
                     <div id="carga">
-                      <img src="img/ajax-loader.gif" />
+                      <img src="Resources/img/ajax-loader.gif" />
                     </div>
                 <!-- Button trigger modal -->
                     <br>
@@ -295,7 +295,7 @@ session_start();
                    <!--          FIN progamacion               --> 
 
                   <!-- INICIO PENSUM-->
-                  <div role="tabpanel" class="tab-pane fade" id="user"><?php require_once("tabs/tabsUser.php");?> </div>            
+                  <div role="tabpanel" class="tab-pane fade" id="user"><?php require_once("Model/UserTabla.php");?> </div>            
             </div>
           </section> 
         </div>
