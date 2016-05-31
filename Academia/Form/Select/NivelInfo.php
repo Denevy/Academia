@@ -1,6 +1,6 @@
 <?php 
-	require_once('../Crud/Conexion.php');
-	require_once('../Crud/Crud.php');
+	require_once('../../Crud/Conexion.php');
+	require_once('../../Crud/Crud.php');
 
 	$model = new Crud;
 	$model->select = "*";
