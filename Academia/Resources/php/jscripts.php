@@ -3,7 +3,7 @@
 <script  type="text/javascript" src="../Resources/js/bootbox.min.js"></script>
 <script type="text/javascript" src="../Resources/js/moment.js"></script>
 <script type="text/javascript" src="../Resources/js/bootstrap-timepicker.js"></script>
-<script type="text/javascript" src="../Resources/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../Resources/js/bootstrap-datetimepicker.min.js">
 // <script type="text/javascript">
 // function llamada(){
 // var conexion;

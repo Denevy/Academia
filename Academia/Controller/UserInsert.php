@@ -6,7 +6,7 @@
 	$nombres =  htmlspecialchars(utf8_decode($_POST['nombres']));
 	$apellidos =  htmlspecialchars(utf8_decode($_POST['apellidos']));
 	$edad  =  htmlspecialchars(utf8_decode($_POST['edad'])); 
-	$contra= utf8_decode($_POST['pass']);
+	$contra= sha1($_POST['pass']);
 	$contrasenia   = ($contra); 
 	$estado    = $_POST['estado']; 
 	$nivel=  $_POST['nivel'];
@@ -17,8 +17,12 @@
 
 	$model->insertValues= "'$user','$nombres','$apellidos','$edad','$contrasenia','$estado','$nivel'";
 	$model->Create();
+	$mensaje = $model->mensaje;
+		$info = null;
 		$info = array(); // creamos el array
-	//unset($info['r1']); // limpiar el array
-	unset($info['r2']);
+		unset($info['r1']);
+		unset($info['r2']);
+		$info['r1'] = 'Transacción ';
+		$info['r2'] = $mensaje;
 	echo json_encode($info);
 ?>

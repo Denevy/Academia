@@ -1,34 +1,25 @@
-function limpiarcombosUser(){
-  $("#user_Name").attr('value',"");
-  $("#user_Nombres").attr('value',"");
-  $("#user_Apellidos").attr('value',"");
-  $("#user_Edad").attr('value',"");
-  $("#user_Pass").attr('value',"");
-  $("#user_PassCheck").attr('value',"");
-  $("#User_Estado").attr('value',"");
-  $("#User_Nivel").attr('value',"");
+function limpiarcombosCategoria(){
+  $("#categoria_Nombre").attr('value',"");
+  $("#categoria_Descripcion").attr('value',"");
+
 }
-function mostrartablaUser() 
+function mostrartablaCategoria() 
 { 
   $.ajax({
     type: "post",
-    url: "../Controller/UserTable.php",
+    url: "../Controller/CategoriaTable.php",
     dataType:"json",
     success: function(result){
         $("#bodytUser").children().remove(); // limpia la tabla
-        $.each(result, function(i,usuariotd){ // iteraciones para desplegar cada fila de la tabla centros
-        var parametro = JSON.stringify(usuariotd);
+        $.each(result, function(i,categoriatd){ // iteraciones para desplegar cada fila de la tabla centros
+        var parametro = JSON.stringify(categoriatd);
         var newRow =
         "<tr>"
-          +"<td>"+usuariotd.idUser+"</td>"
-          +"<td>"+usuariotd.usuario+"</td>"
-          +"<td>"+usuariotd.passUser+"</td>"
-          +"<td>"+usuariotd.nameUser+"</td>"
-          +"<td>"+usuariotd.estadoUser+"</td>"
-          +"<td>"+usuariotd.levelUser+"</td>"
+          +"<td>"+categoriatd.idcategoria+"</td>"
+          +"<td>"+categoriatd.tipo+"</td>"
+          +"<td>"+categoriatd.descripcion+"</td>"
        +"</tr>";
-
-        $(newRow).appendTo("#bodytUser");
+        $(newRow).appendTo("#bodytCategoria");
        //alert(newRow);
         });
     }
@@ -96,10 +87,10 @@ function loadmodalformUser(){
      
 $(document).ready(function(){ // funcion que inicia uan vez el documento este cargado completamente   
   $('#btnmodaladdUser').click(function(){
-    limpiarcombosUser();
+    limpiarcombosCategoria();
   });
-  $('#myTab a[href="#user"]').click(function(){ // en un click mostrar la pestana de Usuarios
-    mostrartablaUser();
+  $('#myTab a[href="#categoria"]').click(function(){ // en un click mostrar la pestana de Usuarios
+  mostrartablaCategoria();
   //alert("Ingreso aca a el js");
   });
   $("#btnaddUser").click(function(){
@@ -113,12 +104,7 @@ $(document).ready(function(){ // funcion que inicia uan vez el documento este ca
       var Estado = $("#User_Estado").val();
       var Nivel = $("#User_Nivel").val();
       var bandera = 1;
-      var dataString = 'username='+username+'&nombres='+ nombres+'&apellidos='+apellidos+'&edad='+edad+'&pass='+pass+'&estado='+Estado+'&nivel='+Nivel;
-      if( isNaN(edad) ) {
-        bootbox.alert('Error en edad Ingrese un dato numerico');
-        document.getElementById("btnaddUser").disabled=false;
-        bandera = 0;
-        }
+      var dataString = 'username='+username+'&nombres='+ nombres+'&apellidos='+apellidos+'&edad='+edad+'&pass='+pass+' &estado='+ Estado + '&nivel='+ Nivel;
       if(pass != passcheck){
         bootbox.alert('Verifique Contraseña');
         document.getElementById("btnaddUser").disabled=false;
@@ -138,12 +124,11 @@ $(document).ready(function(){ // funcion que inicia uan vez el documento este ca
           data: dataString,
           dataType:"json",
           success: function(result){
-            document.getElementById("btnaddUser").disabled=true; 
             var form = document.getElementById("form_user");
             form.reset(); // limpia de los input
             $('#ModalCreateUser').modal('hide');  // esconder el modal
-            limpiarcombosUser();
-            mostrartablaUser();
+            limpiarcombosCategoria();
+            mostrartablaCategoria();
             bootbox.alert({title: result.r1,
             message: result.r2});
             document.getElementById("btnaddUser").disabled=false; // habilitamos el boton

@@ -1,6 +1,13 @@
 <?php
 session_start();
 
+if($_SESSION['login'] == true)
+{
+
+}
+
+/*
+
   if(!isset($_SESSION['valido'])){
     $_SESSION['valido'] = 0;
     if(!isset($_SESSION['nombres']))
@@ -13,15 +20,15 @@ session_start();
       $_SESSION['idrol']=0;
     if(!isset($_SESSION['idestado']))
       $_SESSION['idestado'] =0;
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <?php require('../Resources/php/bootstrapCSS.php'); ?>
+    <?php require_once('../Resources/php/bootstrapCSS.php'); ?>
     <link href="../Resources/css/sticky-footer.css" rel="stylesheet">
-    <?php require('../Resources/php/jscripts.php'); ?>
+    <?php require_once('../Resources/php/jscripts.php'); ?>
     <!-- Bootstrap core JavaScript
     ================================================== -->
       <script type="text/javascript" src="../Resources/js/createUsuario.js"> </script>
@@ -76,6 +83,8 @@ session_start();
                   <li role="presentation" ><a   href="#programacion" aria-controls="programacion" role="tab" data-toggle="tab">Categorias</a></li>     
                 <?php if($_SESSION['idrol']==1){ ?>  
                 <li role="presentation"><a href="#user" aria-controls="user" role="tab" data-toggle="tab">Usuarios</a></li>
+                 <li role="presentation">
+                    <a href="#categoria" aria-controls="categoria" role="tab" data-toggle="tab">Categorias</a></li>
                 <?php } ?>
                 </ul>
               <!-- Tab content -->
@@ -295,7 +304,9 @@ session_start();
                    <!--          FIN progamacion               --> 
 
                   <!-- INICIO PENSUM-->
-                  <div role="tabpanel" class="tab-pane fade" id="user"><?php require_once("../Model/UserTabla.php");?> </div>            
+                  <div role="tabpanel" class="tab-pane fade" id="user"><?php require_once("../Model/UserTabla.php");?> </div>
+                      
+
             </div>
           </section> 
         </div>
@@ -309,6 +320,8 @@ session_start();
 <?php  
     }
     else{
+      session_unset();
+      session_destroy();
 ?>
     <div class="container">
       <div class="row">

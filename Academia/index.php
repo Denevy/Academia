@@ -1,5 +1,17 @@
-
 <?php
+require_once 'Controller/Login.php';
+require_once 'Crud/Conexion.php';
+$mensaje = null;
+if(isset($_POST['verificar']))
+{
+  $model = new Login;
+  $model->usuario = htmlspecialchars($_POST['usuario']);
+  //$model->password= sha1(htmlspecialchars($_POST['password']));
+  $model->password=sha1(htmlspecialchars($_POST['password']));
+  $model->verificar();
+  $mensaje = $model->mensaje;
+}
+/*
   session_start();
   $_SESSION['valido'] = 0;
   $_SESSION['tab']= "programacion";
@@ -9,7 +21,7 @@
   $_SESSION['idrol']=0;
   $_SESSION['idestado'] =0;            
   if(!isset($_SESSION['nombres']))
-    $_SESSION['nombres'] = "";
+    $_SESSION['nombres'] = "";*/
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -36,15 +48,17 @@
         <li><a href="informacion" class="dropdown-menu">INFORMACION</a></li>
         <li>
           <div class="navbar-collapse">
-           <?php require('Resources/php/conexion.php'); ?> 
-          <form class="navbar-form navbar-right" action="Controller/BackIndex.php" method="POST">
+           <?php// require('Resources/php/conexion.php'); ?> 
+          <form class="navbar-form navbar-right" action='<?php echo $_SERVER['PHP_SELF']; ?>' method="POST">
             <div class="form-group">
-              <input type="user"  class="form-control" placeholder="User" name="nombre" required autofocus>
+              <input type="user"  class="form-control" placeholder="User" name="usuario" required autofocus>
             </div>
             <div class="form-group">
-              <input type="password"  class="form-control" placeholder="Password" name="contrasenia" required>
+              <input type="password"  class="form-control" placeholder="Password" name="password" required>
             </div>
-            <button type="submit" class="btn btn-primary" >Log in</button>  
+            <input type ='hidden' name='verificar'>
+            <input type ='submit' class="btn btn-primary" value='ENVIAR'>
+            <!--button type="submit" class="btn btn-primary" >Log in</button-->  
           </form>
           </div>
         </li>
@@ -52,6 +66,12 @@
     </div>
   </div> 
 </nav>
+            <?php 
+              if($mensaje != null)
+              {
+                echo $mensaje;
+              }
+               ?>'
 	<!-- <div class="jumbotron">
       <div class="container">
         <h2>INTRODUCCION</h2>
@@ -147,7 +167,7 @@
   	  <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <?php require('Resources/php/jscripts.php'); ?>
+    <?php require_once('Resources/php/jscripts.php'); ?>
      <!--<script src="js/docs.min.js"></script>-->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
      <!--<script src="js/ie10-viewport-bug-workaround.js"></script>-->

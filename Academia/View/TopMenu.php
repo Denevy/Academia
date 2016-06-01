@@ -14,9 +14,8 @@
 
  
 
-        <li><a href="#about" > <b> <?php echo $_SESSION['nombres']." ".$_SESSION['apellidos']?></b></a></li>
-
-        <li><a href="#about" >[<b> <?php echo$_SESSION['privilegio']?></b>]</a></li>
+        <li><a href="#about" > <b> <?php echo $_SESSION['nombres']." ".$_SESSION['apellidos'];?></b></a></li>
+        <li><a href="#about" >[<b> <?php echo$_SESSION['privilegio'];?></b>]</a></li>
 
         <?php   if($_SESSION['idrol']!=1){  ?>
         <li role="presentation" class="dropdown">
