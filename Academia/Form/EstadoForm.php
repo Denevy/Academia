@@ -12,7 +12,7 @@
     <div class="col-md-1 ">
       <button type="button" id="btnmodaladdUser" class="btn btn-primary btn-lg center" onClick="loadmodalformEstado();" data-toggle="modal" data-target="#ModalCreateEstado">
         <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-        Estado
+        AGREGAR
       </button>
     </div>
   </div>

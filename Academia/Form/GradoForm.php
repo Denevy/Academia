@@ -12,7 +12,7 @@
     <div class="col-md-1 ">
       <button type="button" id="btnmodaladdGrado" class="btn btn-primary btn-lg center" onClick="loadmodalformGrado();" data-toggle="modal" data-target="#ModalCreateGrado">
         <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-        Rol
+        AGREGAR
       </button>
     </div>
   </div>

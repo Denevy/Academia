@@ -13,7 +13,7 @@
     <div class="col-md-1 ">
       <button type="button" id="btnmodaladdUser" class="btn btn-primary btn-lg center" onClick="loadmodalformUser();" data-toggle="modal" data-target="#ModalCreateUser">
         <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-        Usuarios
+        AGREGAR
       </button>
     </div>
   </div>

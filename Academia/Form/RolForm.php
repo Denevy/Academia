@@ -12,7 +12,7 @@
     <div class="col-md-1 ">
       <button type="button" id="btnmodaladdRol" class="btn btn-primary btn-lg center" onClick="loadmodalformRol();" data-toggle="modal" data-target="#ModalCreateRol">
         <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-        Rol
+        AGREGAR
       </button>
     </div>
   </div>
