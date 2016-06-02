@@ -10,12 +10,13 @@
 	$contrasenia   = ($contra); 
 	$estado    = $_POST['estado']; 
 	$nivel=  $_POST['nivel'];
+	$grado=  $_POST['grado'];
 
 	$model = new Crud;
 	$model->insertInto = "`usuario` ";
-	$model->insertColumns = "`alias`,`nombres`,`apellidos`,`edad`,`password`,`estado_idestado`,`rol_idrol`";
+	$model->insertColumns = "`alias`,`nombres`,`apellidos`,`edad`,`password`,`estado_idestado`,`rol_idrol`,`nivelAcademico_idnivelAcademico`";
 
-	$model->insertValues= "'$user','$nombres','$apellidos','$edad','$contrasenia','$estado','$nivel'";
+	$model->insertValues= "'$user','$nombres','$apellidos','$edad','$contrasenia','$estado','$nivel','$grado'";
 	$model->Create();
 	$mensaje = $model->mensaje;
 		$info = null;

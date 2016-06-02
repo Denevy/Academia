@@ -32,6 +32,7 @@ if($_SESSION['login'] == true)
     <!-- Bootstrap core JavaScript
     ================================================== -->
       <script type="text/javascript" src="../Resources/js/RolCreate.js"> </script>
+      <script type="text/javascript" src="../Resources/js/GradoCreate.js"> </script>
       <script type="text/javascript" src="../Resources/js/createUsuario.js"> </script>
       <script type="text/javascript" src="../Resources/js/EstadoCreate.js"> </script>
       <script type="text/javascript" src="../Resources/js/programacion.js"> </script>
@@ -87,6 +88,7 @@ if($_SESSION['login'] == true)
                 <li role="presentation"><a href="#user" aria-controls="user" role="tab" data-toggle="tab">Usuarios</a></li>
                 <li role="presentation"><a href="#estado" aria-controls="estado" role="tab" data-toggle="tab">Estados</a></li>
                 <li role="presentation"><a href="#rol" aria-controls="rol" role="tab" data-toggle="tab">Rol</a></li>
+                <li role="presentation"><a href="#grado" aria-controls="grado" role="tab" data-toggle="tab">Nivel Academico</a></li>
                 <?php } ?>
                 </ul>
               <!-- Tab content -->
@@ -309,6 +311,7 @@ if($_SESSION['login'] == true)
                   <div role="tabpanel" class="tab-pane fade" id="user"><?php require_once("../Model/UserTabla.php");?> </div>
                   <div role="tabpanel" class="tab-pane fade" id="estado"><?php require_once("../Form/EstadoForm.php");?> </div>
                   <div role="tabpanel" class="tab-pane fade" id="rol"><?php require_once("../Form/RolForm.php");?> </div>
+                  <div role="tabpanel" class="tab-pane fade" id="grado"><?php require_once("../Form/GradoForm.php");?> </div>
             </div>
           </section> 
         </div>

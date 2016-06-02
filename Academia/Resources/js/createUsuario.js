@@ -7,6 +7,7 @@ function limpiarcombosUser(){
   $("#user_PassCheck").attr('value',"");
   $("#User_Estado").attr('value',"");
   $("#User_Nivel").attr('value',"");
+  $("#User_Grado").attr('value',"");
 }
 function mostrartablaUser() 
 { 
@@ -26,6 +27,7 @@ function mostrartablaUser()
           +"<td>"+usuariotd.nameUser+"</td>"
           +"<td>"+usuariotd.estadoUser+"</td>"
           +"<td>"+usuariotd.levelUser+"</td>"
+          +"<td>"+usuariotd.gradoUser+"</td>"
        +"</tr>";
 
         $(newRow).appendTo("#bodytUser");
@@ -78,6 +80,27 @@ function selectNivel()
     }
   });
 }
+function selectGrado()
+{
+    $("#User_Grado").children().remove();
+    var newRow =  "<option value=''>Elija Grado</option>";
+    $(newRow).appendTo("#User_Grado");
+  $.ajax({
+    type: "post",
+    url: "../Form/Select/NivelacademicoInfo.php", //pagina a donde se envian los datos
+    dataType:"json",
+    success: function(result){        
+        $("#User_Grado").children().remove();
+        var newRow =  "<option value=''>Elija Grado</option>";
+          $(newRow).appendTo("#User_Grado");
+        
+        $.each(result, function(z,grado){ // iteraciones para desplegar cada fila de la tabla usuarios
+           newRow =   "<option  value="+grado.id+">"+grado.grado+"</option>";
+          $(newRow).appendTo("#User_Grado");
+        });User_Grado    
+    }
+  });
+}
 
 function loadmodalformUser(){
  document.getElementById('btnupdateUser').style.display = 'none';
@@ -90,8 +113,14 @@ function loadmodalformUser(){
   $("#User_Nivel").children().remove(); // limpiamos el select del ciclo
   var newRow =  "<option value=''>Elija un Ciclo</option>";
   $(newRow).appendTo("#User_Nivel");
+
+  $("#User_Grado").children().remove(); // limpiamos el select del ciclo
+  var newRow =  "<option value=''>Elija un Grado</option>";
+  $(newRow).appendTo("#User_Grado");
+
     selectEstado();
-    selectNivel();    
+    selectNivel();
+    selectGrado();    
 }
      
 $(document).ready(function(){ // funcion que inicia uan vez el documento este cargado completamente   
@@ -112,8 +141,9 @@ $(document).ready(function(){ // funcion que inicia uan vez el documento este ca
       var passcheck = $('#user_PassCheck').val();
       var Estado = $("#User_Estado").val();
       var Nivel = $("#User_Nivel").val();
+      var Grado = $("#User_Grado").val();
       var bandera = 1;
-      var dataString = 'username='+username+'&nombres='+ nombres+'&apellidos='+apellidos+'&edad='+edad+'&pass='+pass+'&estado='+Estado+'&nivel='+Nivel;
+      var dataString = 'username='+username+'&nombres='+ nombres+'&apellidos='+apellidos+'&edad='+edad+'&pass='+pass+'&estado='+Estado+'&nivel='+Nivel+'&grado='+Grado;
       if( isNaN(edad) ) {
         bootbox.alert('Error en edad Ingrese un dato numerico');
         document.getElementById("btnaddUser").disabled=false;

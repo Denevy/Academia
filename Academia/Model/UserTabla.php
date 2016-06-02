@@ -65,6 +65,10 @@
               <select class="form-control" id="User_Nivel"  class="{required:true} span3" >
                   <option value="false">Elija un Nivel</option>
               </select>
+              <br>
+              <select class="form-control" id="User_Grado"  class="{required:true} span3" >
+                  <option value="false">Elija un Grado</option>
+              </select>
             </div>            
           <!-- Buttons-->
           <div class="modal-footer">
@@ -92,8 +96,9 @@
               <th>Usuario</th>
               <th>Contraseña</th>
               <th>Nombres</th>    
-              <th>Estado</th>
-              <th>Nivel</th>
+              <th>Estado Acceso</th>
+              <th>Nivel Acceso</th>
+              <th>Nivel Academico</th>
             </thead>
             <tbody id="bodytUser">              
             </tbody >
