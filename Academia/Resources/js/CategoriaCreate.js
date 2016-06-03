@@ -1,6 +1,7 @@
 function limpiarcombosCategoria(){
   $("#categoria_Nombre").attr('value',"");
   $("#categoria_Descripcion").attr('value',"");
+  $("#categoria_nivel").attr('value',"");
 
 }
 function mostrartablaCategoria() 
@@ -10,7 +11,7 @@ function mostrartablaCategoria()
     url: "../Controller/CategoriaTable.php",
     dataType:"json",
     success: function(result){
-        $("#bodytUser").children().remove(); // limpia la tabla
+        $("#bodytCategoria").children().remove(); // limpia la tabla
         $.each(result, function(i,categoriatd){ // iteraciones para desplegar cada fila de la tabla centros
         var parametro = JSON.stringify(categoriatd);
         var newRow =
@@ -18,6 +19,7 @@ function mostrartablaCategoria()
           +"<td>"+categoriatd.idcategoria+"</td>"
           +"<td>"+categoriatd.tipo+"</td>"
           +"<td>"+categoriatd.descripcion+"</td>"
+          +"<td>"+categoriatd.nivel+"</td>"
        +"</tr>";
         $(newRow).appendTo("#bodytCategoria");
        //alert(newRow);
@@ -27,73 +29,47 @@ function mostrartablaCategoria()
   //termina ajax
   return false;  
 }
-function selectEstado()
-{
-  $("#User_Estado").children().remove();
-    var newRow =  "<option value=''>Elija Estado</option>";
-    $(newRow).appendTo("#User_Estado");
-  $.ajax({
-    type: "post",
-    url: "../Form/Select/EstadoInfo.php", //pagina a donde se envian los datos
-    dataType:"json",
-    success: function(result){
-        $("#User_Estado").children().remove();
-        var newRow =  "<option value=''>Elija un Estado</option>";
-          $(newRow).appendTo("#User_Estado");
-        
-        $.each(result, function(i,estado){ // iteraciones para desplegar cada fila de la tabla usuarios
-           newRow =   "<option  value="+estado.id+">"+estado.estado+"</option>";
-          $(newRow).appendTo("#User_Estado");
-        });
-    }
-  });
-}
 function selectNivel()
 {
-    $("#User_Nivel").children().remove();
-    var newRow =  "<option value=''>Elija Nivel de Acceso</option>";
-    $(newRow).appendTo("#User_Nivel");
+    $("#Categoria_Nivel").children().remove();
+    var newRow =  "<option value=''>Elija Nivel</option>";
+    $(newRow).appendTo("#Categoria_Nivel");
   $.ajax({
     type: "post",
     url: "../Form/Select/NivelInfo.php", //pagina a donde se envian los datos
     dataType:"json",
     success: function(result){        
-        $("#User_Nivel").children().remove();
-        var newRow =  "<option value=''>Elija Nivel de Acceso</option>";
-          $(newRow).appendTo("#User_Nivel");
+        $("#Categoria_Nivel").children().remove();
+        var newRow =  "<option value=''>Elija Nivel</option>";
+          $(newRow).appendTo("#Categoria_Nivel");
         
         $.each(result, function(z,nivel){ // iteraciones para desplegar cada fila de la tabla usuarios
            newRow =   "<option  value="+nivel.id+">"+nivel.privilegio+"</option>";
-          $(newRow).appendTo("#User_Nivel");
-        });User_Nivel    
+          $(newRow).appendTo("#Categoria_Nivel");
+        });Categoria_Nivel    
     }
   });
 }
 
 function loadmodalformUser(){
- document.getElementById('btnupdateUser').style.display = 'none';
- document.getElementById('btnaddUser').style.display = 'inline';
+ document.getElementById('btnupdateCategoria').style.display = 'none';
+ document.getElementById('btnaddCategoria').style.display = 'inline';
   
-  $("#User_Estado").children().remove();
-    var newRow =  "<option value=''>Elija un Pensum</option>";
-    $(newRow).appendTo("#User_Estado");
-
-  $("#User_Nivel").children().remove(); // limpiamos el select del ciclo
+  $("#Categoria_Nivel").children().remove(); // limpiamos el select del ciclo
   var newRow =  "<option value=''>Elija un Ciclo</option>";
-  $(newRow).appendTo("#User_Nivel");
-    selectEstado();
+  $(newRow).appendTo("#Categoria_Nivel");
     selectNivel();    
 }
      
 $(document).ready(function(){ // funcion que inicia uan vez el documento este cargado completamente   
-  $('#btnmodaladdUser').click(function(){
+  $('#btnmodaladdCategoria').click(function(){
     limpiarcombosCategoria();
   });
   $('#myTab a[href="#categoria"]').click(function(){ // en un click mostrar la pestana de Usuarios
   mostrartablaCategoria();
   //alert("Ingreso aca a el js");
   });
-  $("#btnaddUser").click(function(){
+  $("#btnaddCategoria").click(function(){
       document.getElementById("btnaddUser").disabled=true; // desabilita el boton mientras operamos
       var username = $('#user_Alias').val();
       var nombres =$('#user_Nombres').val();

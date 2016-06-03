@@ -35,6 +35,7 @@ if($_SESSION['login'] == true)
       <script type="text/javascript" src="../Resources/js/GradoCreate.js"> </script>
       <script type="text/javascript" src="../Resources/js/createUsuario.js"> </script>
       <script type="text/javascript" src="../Resources/js/EstadoCreate.js"> </script>
+      <script type="text/javascript" src="../Resources/js/CategoriaCreate.js"> </script>
       <script type="text/javascript" src="../Resources/js/programacion.js"> </script>
       <!-- AJAX -->
       <script>
@@ -83,12 +84,13 @@ if($_SESSION['login'] == true)
             <div>
                     <!-- Tabs  -->
                 <ul class="nav nav-tabs" role="tablist" id="myTab">
-                  <li role="presentation" ><a   href="#programacion" aria-controls="programacion" role="tab" data-toggle="tab">Categorias</a></li>     
+                  <li role="presentation" ><a   href="#programacion" aria-controls="programacion" role="tab" data-toggle="tab">Categoriaklkjls</a></li>     
                 <?php if($_SESSION['idrol']==1){ ?>  
                 <li role="presentation"><a href="#user" aria-controls="user" role="tab" data-toggle="tab">Usuarios</a></li>
                 <li role="presentation"><a href="#estado" aria-controls="estado" role="tab" data-toggle="tab">Estados</a></li>
                 <li role="presentation"><a href="#rol" aria-controls="rol" role="tab" data-toggle="tab">Rol</a></li>
                 <li role="presentation"><a href="#grado" aria-controls="grado" role="tab" data-toggle="tab">Nivel Academico</a></li>
+                <li role="presentation"><a href="#categoria" aria-controls="categoria" role="tab" data-toggle="tab">Categoria</a></li>
                 <?php } ?>
                 </ul>
               <!-- Tab content -->
@@ -312,6 +314,7 @@ if($_SESSION['login'] == true)
                   <div role="tabpanel" class="tab-pane fade" id="estado"><?php require_once("../Form/EstadoForm.php");?> </div>
                   <div role="tabpanel" class="tab-pane fade" id="rol"><?php require_once("../Form/RolForm.php");?> </div>
                   <div role="tabpanel" class="tab-pane fade" id="grado"><?php require_once("../Form/GradoForm.php");?> </div>
+                  <div role="tabpanel" class="tab-pane fade" id="categoria"><?php require_once("../Form/CategoriaForm.php");?> </div>
             </div>
           </section> 
         </div>

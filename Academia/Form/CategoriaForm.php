@@ -1,45 +1,47 @@
 <div class="container">	
 
 <!-- INICIO PANEL DETALLE USUARIO-->
-  <div class="panel panel-default" id="Dpensum">
+  <div class="panel panel-default" id="Dcategoria">
     <div class="panel-heading">
-      <h3 class="panel-title">Detalle de Categorias</h3>
+      <h3 class="panel-title">Detalle de Categoria</h3>
     </div>
     <div class="panel-body">
-     INICIO DETALLE CATEGORIAS 
-<!-- Button Modal create Categorias-->
+     INICIO DETALLE CATEGORIA
+<!-- Button Modal create User-->
   <br>
   <div class="row">
     <div class="col-md-1 ">
-      <button type="button" id="btnmodaladdCategorias" class="btn btn-primary btn-lg center" onClick="loadmodalformCategorias();" data-toggle="modal" data-target="#ModalCreateCategorias">
+      <button type="button" id="btnmodaladdCategoria" class="btn btn-primary btn-lg center" onClick="loadmodalformCategoria();" data-toggle="modal" data-target="#ModalCreateCategoria">
         <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-        Categorias
+        AGREGAR
       </button>
     </div>
   </div>
 <!-- Modal agregar Docente-->
-  <div class="modal fade" id="ModalCreateCategorias" tabindex="-1" role="dialog" aria-labelledby="ModalCategoriasLabel">
+  <div class="modal fade" id="ModalCreateCategoria" tabindex="-1" role="dialog" aria-labelledby="ModalCategoriaLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <!-- titulo lodal con la x para cerrar -->
           <button type="button"  class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  
-          <h4 class="modal-title" id="Modal_CategoriasLabel">Ingreso de Categorias</h4>
+          <h4 class="modal-title" id="Modal_CategoriaLabel">Ingreso de Categoria</h4>
         </div>
         <div class="modal-body">
           <!-- formulario usuarios -->
-          <form action="" class="form-horizontal" id="form_user" >
-            <div class="form-group" id="divIdCategoria" style='display:none;' >
+          <form action="" class="form-horizontal" id="form_categoria" >
+            <div class="form-group">
               <span class="input-group-addon" id="sizing-addon2" class="glyphicon glyphicon-user" aria-hidden="true"></span>
-              <input type="text" class="form-control" placeholder="Ingrese el tipo" aria-describedby="sizing-addon2" id="categoria_Id">
+              <input type="text" class="form-control" placeholder="Tipo" aria-describedby="sizing-addon2" id="categoria_tipo">
             </div>
             <div class="form-group">
               <span class="input-group-addon" id="sizing-addon2" class="glyphicon glyphicon-user" aria-hidden="true"></span>
-              <input type="text" class="form-control" placeholder="Nombre" aria-describedby="sizing-addon2" id="categoria_Nombre">
+              <input type="text" class="form-control" placeholder="Descripcion" aria-describedby="sizing-addon2" id="categoria_descripcion">
             </div>
             <div class="form-group">
-              <span class="input-group-addon" id="sizing-addon2" class="glyphicon glyphicon-user" aria-hidden="true"></span>
-              <textarea class="form-control" rows="3" placeholder="Descripción" aria-describedby="sizing-addon2" id="categoria_Descripcion"></textarea>
+            <br>
+              <select class="form-control" id="categoria_nivel" class="{required:true} span3" >
+                <option value="false">Elija Nivel Academico</option>
+              </select>              
             </div>            
           <!-- Buttons-->
           <div class="modal-footer">
@@ -61,21 +63,22 @@
 	<br>
     <div class="row table-responsive">
       <div class="col-md-9 col-xs-12">
-          <table class="table table-hover" id="tablaCategoria">
+          <table class="table table-hover" id="tablacategoria">
             <thead>
               <th>id</th>
-              <th>Nombre</th>
+              <th>Tipo</th>
               <th>Descripción</th>
+              <th>Nivel Academico</th>    
             </thead>
             <tbody id="bodytCategoria">              
             </tbody >
           </table>
       </div>
     </div>
-    <!--//////////////// INICIO DETALLE Categoria /////////////////-->
+    <!--//////////////// INICIO DETALLE USUARIOS /////////////////-->
  
 
     </div>
   </div>
-     <!-- FIN PANEL DETALLE Categoria-->
+     <!-- FIN PANEL DETALLE USUARIO-->
 </div>
