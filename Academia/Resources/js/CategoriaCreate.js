@@ -29,36 +29,36 @@ function mostrartablaCategoria()
   //termina ajax
   return false;  
 }
-function selectNivel()
+function selectNivelCategoria()
 {
-    $("#Categoria_Nivel").children().remove();
+    $("#categoria_Nivel").children().remove();
     var newRow =  "<option value=''>Elija Nivel</option>";
-    $(newRow).appendTo("#Categoria_Nivel");
+    $(newRow).appendTo("#categoria_Nivel");
   $.ajax({
     type: "post",
-    url: "../Form/Select/NivelInfo.php", //pagina a donde se envian los datos
+    url: "../Form/Select/NivelacademicoInfo.php", //pagina a donde se envian los datos
     dataType:"json",
     success: function(result){        
-        $("#Categoria_Nivel").children().remove();
+        $("#categoria_Nivel").children().remove();
         var newRow =  "<option value=''>Elija Nivel</option>";
-          $(newRow).appendTo("#Categoria_Nivel");
+          $(newRow).appendTo("#categoria_Nivel");
         
-        $.each(result, function(z,nivel){ // iteraciones para desplegar cada fila de la tabla usuarios
-           newRow =   "<option  value="+nivel.id+">"+nivel.privilegio+"</option>";
-          $(newRow).appendTo("#Categoria_Nivel");
-        });Categoria_Nivel    
+        $.each(result, function(z,grado){ // iteraciones para desplegar cada fila de la tabla usuarios
+           newRow =   "<option  value="+grado.id+">"+grado.grado+"</option>";
+          $(newRow).appendTo("#categoria_Nivel");
+        });categoria_Nivel    
     }
   });
 }
 
-function loadmodalformUser(){
+function loadmodalformCategoria(){
  document.getElementById('btnupdateCategoria').style.display = 'none';
  document.getElementById('btnaddCategoria').style.display = 'inline';
   
-  $("#Categoria_Nivel").children().remove(); // limpiamos el select del ciclo
-  var newRow =  "<option value=''>Elija un Ciclo</option>";
-  $(newRow).appendTo("#Categoria_Nivel");
-    selectNivel();    
+  $("#categoria_Nivel").children().remove(); // limpiamos el select del ciclo
+  var newRow =  "<option value=''>Elija Nivel</option>";
+  $(newRow).appendTo("#categoria_Nivel");
+    selectNivelCategoria();    
 }
      
 $(document).ready(function(){ // funcion que inicia uan vez el documento este cargado completamente   
@@ -69,45 +69,30 @@ $(document).ready(function(){ // funcion que inicia uan vez el documento este ca
   mostrartablaCategoria();
   //alert("Ingreso aca a el js");
   });
-  $("#btnaddCategoria").click(function(){
-      document.getElementById("btnaddUser").disabled=true; // desabilita el boton mientras operamos
-      var username = $('#user_Alias').val();
-      var nombres =$('#user_Nombres').val();
-      var apellidos = $('#user_Apellidos').val();
-      var edad = $('#user_Edad').val();
-      var pass = $('#user_Pass').val();
-      var passcheck = $('#user_PassCheck').val();
-      var Estado = $("#User_Estado").val();
-      var Nivel = $("#User_Nivel").val();
+ $("#btnaddCategoria").click(function(){
+      document.getElementById("btnaddCategoria").disabled=true; // desabilita el boton mientras operamos
+      var tipo = $('#categoria_tipo').val();
+      var descripcion =$('#categoria_descripcion').val();
+      var nivel = $('#categoria_Nivel').val();
       var bandera = 1;
-      var dataString = 'username='+username+'&nombres='+ nombres+'&apellidos='+apellidos+'&edad='+edad+'&pass='+pass+' &estado='+ Estado + '&nivel='+ Nivel;
-      if(pass != passcheck){
-        bootbox.alert('Verifique Contraseña');
-        document.getElementById("btnaddUser").disabled=false;
-        bandera = 0;
-      }
-      if(username==''|| nombres=='' || pass=='' || Estado==''|| Nivel==''|| apellidos==''|| edad==''){
-        bootbox.alert('Por favor llene los campos requeridos');
-        document.getElementById("btnaddUser").disabled=false;
-        bandera = 0;
-      }
+      var dataString = 'tipo='+tipo+'&descripcion='+descripcion+'&nivel='+nivel;
       if(bandera == '1'){
       // AJAX Code To Submit Form.
       //alert(dataString);
         $.ajax({
           type: "post",
-          url: "../Controller/UserInsert.php",
+          url: "../Controller/CategoriaInsert.php",
           data: dataString,
           dataType:"json",
           success: function(result){
-            var form = document.getElementById("form_user");
+            var form = document.getElementById("form_categoria");
             form.reset(); // limpia de los input
-            $('#ModalCreateUser').modal('hide');  // esconder el modal
+            $('#ModalCreateCategoria').modal('hide');  // esconder el modal
             limpiarcombosCategoria();
             mostrartablaCategoria();
             bootbox.alert({title: result.r1,
             message: result.r2});
-            document.getElementById("btnaddUser").disabled=false; // habilitamos el boton
+            document.getElementById("btnaddCategoria").disabled=false; // habilitamos el boton
           }
         });
       }   

@@ -2,14 +2,14 @@
 	require_once('../Crud/Conexion.php');
 	require_once('../Crud/Crud.php');
 
-	$categoria = htmlspecialchars(utf8_decode($_POST['tipo'])); // convierte a codigo del teclado espanol
+	$nombre = htmlspecialchars(utf8_decode($_POST['nombre'])); // convierte a codigo del teclado espanol
 	$descripcion = htmlspecialchars(utf8_decode($_POST['descripcion'])); 
-	$nivel = htmlspecialchars(utf8_decode($_POST['nivel'])); 
+	$categoria = htmlspecialchars(utf8_decode($_POST['categoria'])); 
 	$model = new Crud;
-	$model->insertInto = "`categoria`";
-	$model->insertColumns = "`tipo`,`descripcion`,`nivelAcademico_idnivelAcademico`";
+	$model->insertInto = "`curso`";
+	$model->insertColumns = "`nombre`,`descripcion`,`categoria_idcategoria`";
 
-	$model->insertValues= "'$categoria','$descripcion','$nivel'";
+	$model->insertValues= "'$nombre','$descripcion','$categoria'";
 	$model->Create();
 	$mensaje = $model->mensaje;
 		$info = null;

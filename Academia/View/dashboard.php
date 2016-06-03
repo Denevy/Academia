@@ -31,11 +31,12 @@ if($_SESSION['login'] == true)
     <?php require_once('../Resources/php/jscripts.php'); ?>
     <!-- Bootstrap core JavaScript
     ================================================== -->
+      <script type="text/javascript" src="../Resources/js/CursoCreate.js"> </script>
+      <script type="text/javascript" src="../Resources/js/CategoriaCreate.js"> </script>
       <script type="text/javascript" src="../Resources/js/RolCreate.js"> </script>
       <script type="text/javascript" src="../Resources/js/GradoCreate.js"> </script>
       <script type="text/javascript" src="../Resources/js/createUsuario.js"> </script>
       <script type="text/javascript" src="../Resources/js/EstadoCreate.js"> </script>
-      <script type="text/javascript" src="../Resources/js/CategoriaCreate.js"> </script>
       <script type="text/javascript" src="../Resources/js/programacion.js"> </script>
       <!-- AJAX -->
       <script>
@@ -91,6 +92,7 @@ if($_SESSION['login'] == true)
                 <li role="presentation"><a href="#rol" aria-controls="rol" role="tab" data-toggle="tab">Rol</a></li>
                 <li role="presentation"><a href="#grado" aria-controls="grado" role="tab" data-toggle="tab">Nivel Academico</a></li>
                 <li role="presentation"><a href="#categoria" aria-controls="categoria" role="tab" data-toggle="tab">Categoria</a></li>
+		<li role="presentation"><a href="#curso" aria-controls="curso" role="tab" data-toggle="tab">Curso</a></li>
                 <?php } ?>
                 </ul>
               <!-- Tab content -->
@@ -315,6 +317,7 @@ if($_SESSION['login'] == true)
                   <div role="tabpanel" class="tab-pane fade" id="rol"><?php require_once("../Form/RolForm.php");?> </div>
                   <div role="tabpanel" class="tab-pane fade" id="grado"><?php require_once("../Form/GradoForm.php");?> </div>
                   <div role="tabpanel" class="tab-pane fade" id="categoria"><?php require_once("../Form/CategoriaForm.php");?> </div>
+		  <div role="tabpanel" class="tab-pane fade" id="curso"><?php require_once("../Form/CursoForm.php");?> </div>
             </div>
           </section> 
         </div>

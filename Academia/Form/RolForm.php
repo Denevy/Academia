@@ -23,7 +23,7 @@
         <div class="modal-header">
           <!-- titulo lodal con la x para cerrar -->
           <button type="button"  class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>  
-          <h4 class="modal-title" id="Modal_RolLabel">Ingreso de Estados</h4>
+          <h4 class="modal-title" id="Modal_RolLabel">Ingreso de Rol</h4>
         </div>
         <div class="modal-body">
           <!-- formulario usuarios -->
