@@ -50,6 +50,7 @@ if($_SESSION['login'] == true)
                 <li role="presentation"><a href="#grado" aria-controls="grado" role="tab" data-toggle="tab">Nivel Academico</a></li>
                 <li role="presentation"><a href="#categoria" aria-controls="categoria" role="tab" data-toggle="tab">Categoria</a></li>
                 <li role="presentation"><a href="#curso" aria-controls="curso" role="tab" data-toggle="tab">Cursos</a></li>
+                  <li role="presentation"><a href="#evaluacion" aria-controls="evaluacion" role="tab" data-toggle="tab">Evaluciones</a></li>
                 <?php } ?>
                 <?php if($_SESSION['idrol']!= 1){?>
                   <li role="presentation"><a href="#CursoEstudiante" aria-controls="CursoEstudiante" role="tab" data-toggle="tab">Cursos</a></li>
@@ -74,6 +75,7 @@ if($_SESSION['login'] == true)
                   <div role="tabpanel" class="tab-pane fade" id="grado"><?php require_once("../Form/GradoForm.php");?> </div>
                   <div role="tabpanel" class="tab-pane fade" id="categoria"><?php require_once("../Form/CategoriaForm.php");?> </div>
                   <div role="tabpanel" class="tab-pane fade" id="curso"><?php require_once("../Form/CursoForm.php");?> </div>
+                <div role="tabpanel" class="tab-pane fade" id="evaluacion"><?php require_once("../Form/EvaluacionForm.php");?> </div>
                 <?php }?>
                 <?php if($_SESSION['idrol']!= 1){?>
                   <div role="tabpanel" class="tab-pane fade" id="CursoEstudiante"><?php require_once("../Form/CursoEstudianteForm.php");?> </div>

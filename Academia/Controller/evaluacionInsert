@@ -1,0 +1,23 @@
+<?php 
+	require_once('../Crud/Conexion.php');
+	require_once('../Crud/Crud.php');
+
+	$evaluacionId   =  htmlspecialchars(utf8_decode($_POST['idEvaluacion'])); // convierte a codigo del teclado espanol
+	$curso   =  htmlspecialchars(utf8_decode($_POST['curso']));
+	$estado   =  htmlspecialchars(utf8_decode($_POST['estado']));
+	$cursoId   =  htmlspecialchars(utf8_decode($_POST['idCurso']));
+	$model = new Crud;
+	$model->insertInto = "`evaluacion` ";
+	$model->insertColumns = "`idEvaluacion`,`curso`,`estadoEvaluacion`,`idCurso`";
+
+	$model->insertValues= "'$evaluacionId','$curso','estado','cursoId";
+	$model->Create();
+	$mensaje = $model->mensaje;
+		$info = null;
+		$info = array(); // creamos el array
+		unset($info['r1']);
+		unset($info['r2']);
+		$info['r1'] = 'Transacción ';
+		$info['r2'] = $mensaje;
+	echo json_encode($info);
+?>
