@@ -3,8 +3,8 @@
 	require_once('../Crud/Crud.php');
 
 	$model = new Crud;
-	$model->select = 'c.idcurso, c.nombre, c.descripcion, ct.tipo';
-	$model->from = 'curso c inner join categoria ct on c.categoria_idcategoria = ct.idcategoria';
+	$model->select = 'c.nombre, c.descripcion, ct.tipo, na.grado';
+	$model->from = 'curso c inner join categoria ct on c.categoria_idcategoria = ct.idcategoria inner join nivelAcademico na on ct.nivelAcademico_idnivelAcademico= na.idnivelAcademico';
 	$model->Read();
 	$filas = $model->rows;
 	//var_dump($filas);
@@ -12,7 +12,7 @@
 	{
 		foreach ($filas as $fila)
 		{
-			$curso[] = array('idcurso'=>$fila['idcurso'], 'nombre'=>$fila['nombre'], 'descripcion'=>$fila['descripcion'], 'tipo'=>$fila['tipo']);
+			$curso[] = array('nombre'=>$fila['nombre'], 'descripcion'=>$fila['descripcion'], 'tipo'=>$fila['tipo'], 'grado'=>$fila['grado']);
 		}
 	}
 	

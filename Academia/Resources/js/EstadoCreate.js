@@ -13,7 +13,6 @@ function mostrartablaEstado()
         var parametro = JSON.stringify(estadotd);
         var newRow =
         "<tr>"
-          +"<td>"+estadotd.idestado+"</td>"
           +"<td>"+estadotd.tipo+"</td>"
        +"</tr>";
 

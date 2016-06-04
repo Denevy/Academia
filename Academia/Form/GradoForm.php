@@ -54,7 +54,6 @@
       <div class="col-md-9 col-xs-12">
           <table class="table table-hover" id="tablaGrado">
             <thead>
-              <th>id</th>
               <th>Nivel Academico</th>
             </thead>
             <tbody id="bodytGrado">              

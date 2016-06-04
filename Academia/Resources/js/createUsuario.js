@@ -21,7 +21,6 @@ function mostrartablaUser()
         var parametro = JSON.stringify(usuariotd);
         var newRow =
         "<tr>"
-          +"<td>"+usuariotd.idUser+"</td>"
           +"<td>"+usuariotd.usuario+"</td>"
           +"<td>"+usuariotd.passUser+"</td>"
           +"<td>"+usuariotd.nameUser+"</td>"

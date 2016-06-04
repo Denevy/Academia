@@ -65,7 +65,6 @@
       <div class="col-md-9 col-xs-12">
           <table class="table table-hover" id="tablacategoria">
             <thead>
-              <th>id</th>
               <th>Tipo</th>
               <th>Descripción</th>
               <th>Nivel Academico</th>    

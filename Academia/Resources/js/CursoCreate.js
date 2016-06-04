@@ -16,10 +16,10 @@ function mostrartablaCurso()
         var parametro = JSON.stringify(cursotd);
         var newRow =
         "<tr>"
-          +"<td>"+cursotd.idcurso+"</td>"
           +"<td>"+cursotd.nombre+"</td>"
           +"<td>"+cursotd.descripcion+"</td>"
           +"<td>"+cursotd.tipo+"</td>"
+          +"<td>"+cursotd.grado+"</td>"
        +"</tr>";
         $(newRow).appendTo("#bodytCurso");
        //alert(newRow);
@@ -44,7 +44,7 @@ function selectCategoriaCurso()
           $(newRow).appendTo("#curso_categoria");
         
         $.each(result, function(z,curso){ // iteraciones para desplegar cada fila de la tabla usuarios
-           newRow =   "<option  value="+curso.id+">"+curso.tipo+"</option>";
+           newRow =   "<option  value="+curso.id+">"+curso.tipo+" - "+curso.grado+"</option>";
           $(newRow).appendTo("#curso_categoria");
         });curso_categoria    
     }

@@ -15,23 +15,7 @@
  
 
         <li><a href="#about" > <b> <?php echo $_SESSION['nombres']." ".$_SESSION['apellidos'];?></b></a></li>
-        <li><a href="#about" >[<b> <?php echo$_SESSION['privilegio'];?></b>]</a></li>
-
-        <?php   if($_SESSION['idrol']!=1){  ?>
-        <li role="presentation" class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-              <b> <?php echo $_SESSION['codigoCentroU'];if($_SESSION['idNivelAcceso']==2){ echo $_SESSION['codigoCarrera'];}?></b> <span class="caret"></span>
-           </a>
-          <ul class="dropdown-menu">
-             <li><a href="#about" >Centro Universitario > [<b><?php echo $_SESSION['nombreCentroU']?></b>]</a></li>
-           <?php   if($_SESSION['idNivelAcceso']==2){ ?>
-             <li><a href="#about" >Carrera > [<b><?php echo $_SESSION['nombreCarrera']?></b>]</a></li>
-           
-          </ul>
-        </li> 
-        <?php    }
-            }  ?>
-            
+        <li><a href="#about" >[<b> <?php echo$_SESSION['privilegio'];?></b>]</a></li>           
        
         <li><a href="../index.php"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Cerrar Sesion</a></li>
       </ul>

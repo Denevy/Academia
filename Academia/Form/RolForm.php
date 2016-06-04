@@ -54,7 +54,6 @@
       <div class="col-md-9 col-xs-12">
           <table class="table table-hover" id="tablarol">
             <thead>
-              <th>id</th>
               <th>Nivel</th>
             </thead>
             <tbody id="bodytRol">              

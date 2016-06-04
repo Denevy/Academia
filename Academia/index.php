@@ -1,6 +1,8 @@
 <?php
 require_once 'Controller/Login.php';
 require_once 'Crud/Conexion.php';
+session_start();
+$_SESSION['login'] = false;
 $mensaje = null;
 if(isset($_POST['verificar']))
 {
@@ -11,17 +13,6 @@ if(isset($_POST['verificar']))
   $model->verificar();
   $mensaje = $model->mensaje;
 }
-/*
-  session_start();
-  $_SESSION['valido'] = 0;
-  $_SESSION['tab']= "programacion";
-  $_SESSION['nombres'] ="";
-  $_SESSION['idusuario'] =0;
-  $_SESSION['privilegio']= "";   
-  $_SESSION['idrol']=0;
-  $_SESSION['idestado'] =0;            
-  if(!isset($_SESSION['nombres']))
-    $_SESSION['nombres'] = "";*/
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -48,7 +39,6 @@ if(isset($_POST['verificar']))
         <li><a href="informacion" class="dropdown-menu">INFORMACION</a></li>
         <li>
           <div class="navbar-collapse">
-           <?php// require('Resources/php/conexion.php'); ?> 
           <form class="navbar-form navbar-right" action='<?php echo $_SERVER['PHP_SELF']; ?>' method="POST">
             <div class="form-group">
               <input type="user"  class="form-control" placeholder="User" name="usuario" required autofocus>
@@ -72,11 +62,6 @@ if(isset($_POST['verificar']))
                 echo $mensaje;
               }
                ?>'
-	<!-- <div class="jumbotron">
-      <div class="container">
-        <h2>INTRODUCCION</h2>
-        <p>Proyecto CHRONOS manejo de horarios de la Univerisad Mariano Galvez</p>
-      </div>
   </div> --> 
   <!-- Carousel -->
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -92,8 +77,6 @@ if(isset($_POST['verificar']))
           <div class="container">
             <div class="carousel-caption">
               <h1>Aprendizaje</h1>
-              <!-- <p>Ayudándole a facilitar los procesos de elaboracion de Calendarios de Clases como un apoyo a: <code>http://www.umg.edu.gt</code> </p> -->
-              <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
             </div>
           </div>
         </div>

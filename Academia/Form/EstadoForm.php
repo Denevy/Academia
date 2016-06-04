@@ -54,7 +54,6 @@
       <div class="col-md-9 col-xs-12">
           <table class="table table-hover" id="tablausuario">
             <thead>
-              <th>id</th>
               <th>Estado</th>
             </thead>
             <tbody id="bodytEstado">              

@@ -16,7 +16,6 @@ function mostrartablaCategoria()
         var parametro = JSON.stringify(categoriatd);
         var newRow =
         "<tr>"
-          +"<td>"+categoriatd.idcategoria+"</td>"
           +"<td>"+categoriatd.tipo+"</td>"
           +"<td>"+categoriatd.descripcion+"</td>"
           +"<td>"+categoriatd.nivel+"</td>"

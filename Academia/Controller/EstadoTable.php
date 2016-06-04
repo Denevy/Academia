@@ -9,7 +9,7 @@
 	$filas = $model->rows;
 	foreach ($filas as $fila) 
 	{
-		$consulta[] = array('idestado'=>$fila['idestado'], 'tipo'=>$fila['tipo']);
+		$consulta[] = array('tipo'=>$fila['tipo']);
 	}
 	echo json_encode($consulta);
 ?>

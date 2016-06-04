@@ -13,7 +13,6 @@ function mostrartablaRol()
         var parametro = JSON.stringify(roltd);
         var newRow =
         "<tr>"
-          +"<td>"+roltd.idrol+"</td>"
           +"<td>"+roltd.privilegio+"</td>"
        +"</tr>";
 

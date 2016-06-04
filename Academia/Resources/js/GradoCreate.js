@@ -13,7 +13,6 @@ function mostrartablaGrado()
         var parametro = JSON.stringify(gradotd);
         var newRow =
         "<tr>"
-          +"<td>"+gradotd.idgrado+"</td>"
           +"<td>"+gradotd.grado+"</td>"
        +"</tr>";
 

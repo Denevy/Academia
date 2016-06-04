@@ -9,7 +9,7 @@
 	$filas = $model->rows;
 	foreach ($filas as $fila) 
 	{
-		$usuario[] = array('idUser'=>$fila['idusuario'], 'usuario'=>$fila['alias'], 'passUser'=>$fila['password'], 'nameUser'=>$fila['nombres']." ".$fila['apellidos'], 'estadoUser'=>$fila['tipo'], 'levelUser'=>$fila['privilegio'],'gradoUser'=>$fila['grado']);
+		$usuario[] = array('usuario'=>$fila['alias'], 'passUser'=>$fila['password'], 'nameUser'=>$fila['nombres']." ".$fila['apellidos'], 'estadoUser'=>$fila['tipo'], 'levelUser'=>$fila['privilegio'],'gradoUser'=>$fila['grado']);
 	}
 	echo json_encode($usuario);
 ?>

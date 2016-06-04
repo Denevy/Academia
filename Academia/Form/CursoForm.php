@@ -65,10 +65,10 @@
       <div class="col-md-9 col-xs-12">
           <table class="table table-hover" id="tablacurso">
             <thead>
-              <th>id</th>
               <th>Nombre</th>
               <th>Descripción</th>
-              <th>Categoria</th>    
+              <th>Categoria</th>
+              <th>Nivel academico</th>    
             </thead>
             <tbody id="bodytCurso">              
             </tbody >

@@ -12,7 +12,7 @@
 	{
 		foreach ($filas as $fila)
 		{
-			$categoria[] = array('idcategoria'=>$fila['idcategoria'], 'tipo'=>$fila['tipo'], 'descripcion'=>$fila['descripcion'], 'nivel'=>$fila['grado']);
+			$categoria[] = array('tipo'=>$fila['tipo'], 'descripcion'=>$fila['descripcion'], 'nivel'=>$fila['grado']);
 		}
 	}
 	
